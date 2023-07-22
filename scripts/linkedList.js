@@ -26,7 +26,22 @@ const linkedList = () => {
     lastNode.next = newNode;
   };
 
-  return { root, append };
+  // Prints the list.
+  const printList = () => {
+    var printNode = root;
+
+    if (printNode.next === null) {
+      console.log("Empty list");
+    }
+
+    // If next node is not empty, go to it and print it.
+    while (printNode.next !== null) {
+      printNode = printNode.next;
+      console.log(printNode.value);
+    }
+  };
+
+  return { root, append, printList };
 };
 
 export { linkedList };
