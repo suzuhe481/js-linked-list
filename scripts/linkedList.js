@@ -76,7 +76,7 @@ const linkedList = () => {
     }
   };
 
-  return { root, append, prepend, size, printList };
+  return { append, prepend, size, printList };
 };
 
 export { linkedList };
