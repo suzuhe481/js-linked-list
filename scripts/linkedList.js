@@ -52,7 +52,7 @@ const linkedList = () => {
   };
 
   // Returns the first node in the list.
-  // Returns null if list is empty;
+  // Returns null if list is empty.
   const head = () => {
     if (root.next === null) {
       return null;
