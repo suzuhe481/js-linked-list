@@ -37,6 +37,20 @@ const linkedList = () => {
     root.next = newNode;
   };
 
+  // Returns the size of the linked list.
+  const size = () => {
+    var counterNode = root;
+    var size = 0;
+
+    // Iterates through list while counting nodes.
+    while (counterNode.next !== null) {
+      counterNode = counterNode.next;
+      size++;
+    }
+
+    return size;
+  };
+
   // Prints the list.
   const printList = () => {
     var printNode = root;
@@ -52,7 +66,7 @@ const linkedList = () => {
     }
   };
 
-  return { root, append, prepend, printList };
+  return { root, append, prepend, size, printList };
 };
 
 export { linkedList };
