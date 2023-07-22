@@ -9,19 +9,21 @@ const linkedList = () => {
     // Create new node.
     const newNode = node(value);
 
+    var lastNode = root;
+
     // If no nodes in list, newNode assign to root's next/
-    if (root.next === null) {
-      root.next = newNode;
+    if (lastNode.next === null) {
+      lastNode.next = newNode;
       return;
     }
 
     // Goes to the end of the list.
-    while (root.next !== null) {
-      root = root.next;
+    while (lastNode.next !== null) {
+      lastNode = lastNode.next;
     }
 
     // Assigns new node.
-    root.next = newNode;
+    lastNode.next = newNode;
   };
 
   return { root, append };
