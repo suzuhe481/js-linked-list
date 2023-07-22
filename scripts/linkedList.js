@@ -104,6 +104,10 @@ const linkedList = () => {
 
   // Removes the last node of the list.
   const pop = () => {
+    if (root.next === null) {
+      return;
+    }
+
     var newLastNode = root;
 
     // Goes to the second last node of the list.
