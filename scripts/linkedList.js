@@ -51,6 +51,16 @@ const linkedList = () => {
     return size;
   };
 
+  // Returns the first node in the list.
+  // Returns null if list is empty;
+  const head = () => {
+    if (root.next === null) {
+      return null;
+    } else {
+      return root.next;
+    }
+  };
+
   // Prints the list.
   const printList = () => {
     var printNode = root;
