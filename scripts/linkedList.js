@@ -61,6 +61,23 @@ const linkedList = () => {
     }
   };
 
+  // Returns the last node in the list.
+  // Returns null if list is empty.
+  const tail = () => {
+    if (root.next === null) {
+      return null;
+    }
+
+    var lastNode = root;
+
+    // Goes to the end of the list.
+    while (lastNode.next !== null) {
+      lastNode = lastNode.next;
+    }
+
+    return lastNode;
+  };
+
   // Prints the list.
   const printList = () => {
     var printNode = root;
@@ -76,7 +93,7 @@ const linkedList = () => {
     }
   };
 
-  return { append, prepend, size, printList, head };
+  return { append, prepend, size, printList, head, tail };
 };
 
 export { linkedList };
