@@ -78,6 +78,30 @@ const linkedList = () => {
     return lastNode;
   };
 
+  // Returns the node at the given index.
+  // Returns null if index is negative or if index passes size of list.
+  const at = (index) => {
+    if (index < 0) {
+      return null;
+    }
+
+    var currentNode = root;
+    var counter = 0;
+
+    // Iterates through list while counting nodes.
+    while (counter < index) {
+      // If currentNode is null, return null
+      if (currentNode.value === null) {
+        return null;
+      }
+
+      currentNode = currentNode.next;
+      counter++;
+    }
+
+    return currentNode;
+  };
+
   // Prints the list.
   const printList = () => {
     var printNode = root;
@@ -93,7 +117,7 @@ const linkedList = () => {
     }
   };
 
-  return { append, prepend, size, printList, head, tail };
+  return { append, prepend, size, printList, head, tail, at };
 };
 
 export { linkedList };
