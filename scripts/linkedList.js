@@ -89,14 +89,14 @@ const linkedList = () => {
     var counter = 0;
 
     // Iterates through list while counting nodes.
-    while (counter < index) {
-      // If currentNode is null, return null
-      if (currentNode.value === null) {
-        return null;
-      }
-
+    while (counter !== index) {
       currentNode = currentNode.next;
       counter++;
+
+      // If currentNode is null, return null
+      if (currentNode === null) {
+        return null;
+      }
     }
 
     return currentNode;
