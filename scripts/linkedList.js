@@ -102,6 +102,19 @@ const linkedList = () => {
     return currentNode;
   };
 
+  // Removes the last node of the list.
+  const pop = () => {
+    var newLastNode = root;
+
+    // Goes to the second last node of the list.
+    while (newLastNode.next.next !== null) {
+      newLastNode = newLastNode.next;
+    }
+
+    // Sets next to null to remove last node.
+    newLastNode.next = null;
+  };
+
   // Prints the list.
   const printList = () => {
     var printNode = root;
@@ -117,7 +130,7 @@ const linkedList = () => {
     }
   };
 
-  return { append, prepend, size, printList, head, tail, at };
+  return { append, prepend, size, printList, head, tail, at, pop };
 };
 
 export { linkedList };
