@@ -150,6 +150,25 @@ const linkedList = () => {
     return null;
   };
 
+  // Function to print list.
+  const toString = () => {
+    var printNode = root;
+    var printList = "";
+
+    printList = printList.concat("(root) -> ");
+
+    // If next node is not empty, go to it.
+    while (printNode.next !== null) {
+      printNode = printNode.next;
+
+      printList = printList.concat(`(${printNode.value}) -> `);
+    }
+
+    printList = printList.concat("(null)");
+
+    return printList;
+  };
+
   // Prints the list.
   const printList = () => {
     var printNode = root;
@@ -176,6 +195,7 @@ const linkedList = () => {
     pop,
     contains,
     find,
+    toString,
   };
 };
 
