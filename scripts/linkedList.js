@@ -115,6 +115,22 @@ const linkedList = () => {
     newLastNode.next = null;
   };
 
+  // Returns true if list contains given value.
+  // Return false otherwise.
+  const contains = (value) => {
+    var currentNode = root;
+
+    // Goes to the end of the list.
+    while (currentNode.next !== null) {
+      currentNode = currentNode.next;
+      if (currentNode.value === value) {
+        return true;
+      }
+    }
+
+    return false;
+  };
+
   // Prints the list.
   const printList = () => {
     var printNode = root;
@@ -130,7 +146,7 @@ const linkedList = () => {
     }
   };
 
-  return { append, prepend, size, printList, head, tail, at, pop };
+  return { append, prepend, size, printList, head, tail, at, pop, contains };
 };
 
 export { linkedList };
