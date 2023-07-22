@@ -26,6 +26,17 @@ const linkedList = () => {
     lastNode.next = newNode;
   };
 
+  // Prepends node to the start of the list.
+  const prepend = (value) => {
+    // Create new node.
+    const newNode = node(value);
+
+    // NewNode points to root's next.
+    newNode.next = root.next;
+    // Root's next points to newNode.
+    root.next = newNode;
+  };
+
   // Prints the list.
   const printList = () => {
     var printNode = root;
@@ -41,7 +52,7 @@ const linkedList = () => {
     }
   };
 
-  return { root, append, printList };
+  return { root, append, prepend, printList };
 };
 
 export { linkedList };
