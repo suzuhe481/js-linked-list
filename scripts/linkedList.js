@@ -131,6 +131,25 @@ const linkedList = () => {
     return false;
   };
 
+  // Returns the index of the null containing given value.
+  // Returns null otherwise.
+  const find = (value) => {
+    var currentNode = root;
+    var index = 0;
+
+    while (currentNode.next !== null) {
+      currentNode = currentNode.next;
+
+      if (currentNode.value === value) {
+        return index;
+      }
+
+      index += 1;
+    }
+
+    return null;
+  };
+
   // Prints the list.
   const printList = () => {
     var printNode = root;
@@ -146,7 +165,18 @@ const linkedList = () => {
     }
   };
 
-  return { append, prepend, size, printList, head, tail, at, pop, contains };
+  return {
+    append,
+    prepend,
+    size,
+    printList,
+    head,
+    tail,
+    at,
+    pop,
+    contains,
+    find,
+  };
 };
 
 export { linkedList };
