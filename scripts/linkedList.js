@@ -154,6 +154,32 @@ const linkedList = () => {
     return null;
   };
 
+  // Inserts a new node with the given value at the given index.
+  const insertAt = (value, index) => {
+    // Returns if the index is greater than the size of the list.
+    if (index > size() || index < 0) {
+      console.log("Index out of range");
+      return;
+    }
+
+    // Create new node.
+    const newNode = node(value);
+
+    var insertAfterNode = root;
+    var counter = 0;
+
+    // Find node to insert after
+    while (counter < index) {
+      counter++;
+      insertAfterNode = insertAfterNode.next;
+    }
+
+    newNode.next = insertAfterNode.next;
+    insertAfterNode.next = newNode;
+
+    // console.log(insertAfterNode);
+  };
+
   // Function to print list.
   const toString = () => {
     var printNode = root;
@@ -184,6 +210,7 @@ const linkedList = () => {
     contains,
     find,
     toString,
+    insertAt,
   };
 };
 
