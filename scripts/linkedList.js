@@ -180,6 +180,27 @@ const linkedList = () => {
     // console.log(insertAfterNode);
   };
 
+  // Removes node at the given index.
+  const removeAt = (index) => {
+    // Returns if the index is greater than the size of the list.
+    if (index > size() || index < 0) {
+      console.log("Index out of range");
+      return;
+    }
+
+    var removeAfterNode = root;
+    var counter = 0;
+
+    // Find node to remove after
+    while (counter < index) {
+      counter++;
+      removeAfterNode = removeAfterNode.next;
+    }
+
+    // The next of removeAfterNode gets updated to 2 nodes head.
+    removeAfterNode.next = removeAfterNode.next.next;
+  };
+
   // Function to print list.
   const toString = () => {
     var printNode = root;
@@ -211,6 +232,7 @@ const linkedList = () => {
     find,
     toString,
     insertAt,
+    removeAt,
   };
 };
 
